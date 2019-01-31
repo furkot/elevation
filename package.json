@@ -1,0 +1,30 @@
+{
+  "name": "furkot-elevation",
+  "version": "0.0.0",
+  "description": "Elevation service for Furkot",
+  "author": {
+    "name": "Damian Krzeminski",
+    "email": "pirxpilot@furkot.com",
+    "url": "https://pirxpilot.me"
+  },
+  "repository": "furkot/elevation",
+  "license": "MIT",
+  "keywords": [
+    "furkot-elevation",
+    "furkot",
+    "elevation"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "jshint": "~2",
+    "mocha": "~5",
+    "should": "~13"
+  },
+  "scripts": {
+    "test": "make check"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ]
+}
