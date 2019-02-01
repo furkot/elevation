@@ -14,7 +14,9 @@
     "furkot",
     "elevation"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "run-waterfall-until": "~1"
+  },
   "devDependencies": {
     "jshint": "~2",
     "mocha": "~5",
