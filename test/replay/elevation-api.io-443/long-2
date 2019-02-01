@@ -1,0 +1,14 @@
+GET /api/elevation?points=%2845.68689%2C-111.18576%29%2C%2845.72217%2C-111.206%29
+accept-encoding: gzip,deflate
+accept: */*
+
+HTTP/1.1 200 OK
+date: Sat, 02 Feb 2019 02:23:25 GMT
+content-type: application/json
+connection: close
+access-control-allow-origin: *
+vary: Origin
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-xss-protection: 1; mode=block
+
+{"elevations":[{"lat":45.68689,"lon":-111.18576,"elevation":1425.0},{"lat":45.72217,"lon":-111.206,"elevation":1396.0}],"resolution":"1000m"}

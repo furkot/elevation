@@ -1,0 +1,14 @@
+GET /api/elevation?points=%2845.34019%2C-111.1706%29%2C%2845.3654%2C-111.17472%29%2C%2845.37971%2C-111.17924%29%2C%2845.39037%2C-111.1999%29%2C%2845.40719%2C-111.22156%29%2C%2845.43619%2C-111.23311%29%2C%2845.46496%2C-111.25638%29%2C%2845.4924%2C-111.27248%29%2C%2845.5212%2C-111.2514%29%2C%2845.61696%2C-111.19695%29
+accept-encoding: gzip,deflate
+accept: */*
+
+HTTP/1.1 200 OK
+date: Sat, 02 Feb 2019 02:23:25 GMT
+content-type: application/json
+connection: close
+access-control-allow-origin: *
+vary: Origin
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-xss-protection: 1; mode=block
+
+{"elevations":[{"lat":45.34019,"lon":-111.1706,"elevation":1770.5},{"lat":45.3654,"lon":-111.17472,"elevation":1797.5},{"lat":45.37971,"lon":-111.17924,"elevation":1770.0},{"lat":45.39037,"lon":-111.1999,"elevation":1767.0},{"lat":45.40719,"lon":-111.22156,"elevation":1721.5},{"lat":45.43619,"lon":-111.23311,"elevation":1664.5},{"lat":45.46496,"lon":-111.25638,"elevation":1643.5},{"lat":45.4924,"lon":-111.27248,"elevation":1590.0},{"lat":45.5212,"lon":-111.2514,"elevation":1670.5},{"lat":45.61696,"lon":-111.19695,"elevation":1478.0}],"resolution":"1000m"}
