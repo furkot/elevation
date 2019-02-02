@@ -17,7 +17,13 @@ describe('elevation API io', function () {
       should.not.exist(err);
       completed.should.be.ok();
       queryId.should.eql(111);
-      result.should.eql([ 2607, 96 ]);
+      result.should.eql([{
+        ll: [ -106.17188, 39.90974 ],
+        elevation: 2607
+      }, {
+        ll: [ 10.02487, 62.52417 ],
+        elevation: 96
+      }]);
       done();
     });
   });
@@ -79,7 +85,12 @@ describe('elevation API io', function () {
         1478,
         1425,
         1396
-      ]);
+      ].map((elevation, i) => {
+        return {
+          ll: points[i],
+          elevation
+        };
+      }));
       done();
     });
   });
