@@ -15,6 +15,7 @@
     "elevation"
   ],
   "dependencies": {
+    "fetchagent": "~2",
     "run-waterfall-until": "~1"
   },
   "devDependencies": {
