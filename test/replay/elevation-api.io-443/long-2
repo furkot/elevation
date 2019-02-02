@@ -1,4 +1,4 @@
-GET /api/elevation?points=%2845.68689%2C-111.18576%29%2C%2845.72217%2C-111.206%29
+GET /api/elevation?points=(45.68689%2C-111.18576),(45.72217%2C-111.206)
 accept-encoding: gzip,deflate
 accept: */*
 
