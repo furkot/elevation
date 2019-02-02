@@ -8,9 +8,8 @@ describe('furkot elevation', function () {
     const elevation = furkotElevation({
       random_enable: true
     });
-    elevation(points, (err, result) => {
+    elevation(points, (result) => {
       should.exist(result);
-      should.not.exist(err);
       result.should.have.length(points.length);
       done();
     });
