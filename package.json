@@ -18,6 +18,8 @@
     "run-waterfall-until": "~1"
   },
   "devDependencies": {
+    "@pirxpilot/replay": "^2.2.1",
+    "isomorphic-fetch": "^2.2.1",
     "jshint": "~2",
     "mocha": "~5",
     "should": "~13"
