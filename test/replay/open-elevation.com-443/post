@@ -1,0 +1,16 @@
+POST /api/v1/lookup
+content-type: application/json
+accept-encoding: gzip,deflate
+accept: */*
+body: {\"locations\":[{\"longitude\":-111.39386,\"latitude\":45.28834},{\"longitude\":-111.37538,\"latitude\":45.28785},{\"longitude\":-111.357,\"latitude\":45.28271},{\"longitude\":-111.34082,\"latitude\":45.27676},{\"longitude\":-111.32665,\"latitude\":45.26939},{\"longitude\":-111.30593,\"latitude\":45.26144},{\"longitude\":-111.26633,\"latitude\":45.26636},{\"longitude\":-111.24183,\"latitude\":45.27235},{\"longitude\":-111.22051,\"latitude\":45.28791},{\"longitude\":-111.19664,\"latitude\":45.30623},{\"longitude\":-111.1706,\"latitude\":45.34019},{\"longitude\":-111.17472,\"latitude\":45.3654},{\"longitude\":-111.17924,\"latitude\":45.37971},{\"longitude\":-111.1999,\"latitude\":45.39037},{\"longitude\":-111.22156,\"latitude\":45.40719},{\"longitude\":-111.23311,\"latitude\":45.43619},{\"longitude\":-111.25638,\"latitude\":45.46496},{\"longitude\":-111.27248,\"latitude\":45.4924},{\"longitude\":-111.2514,\"latitude\":45.5212},{\"longitude\":-111.19695,\"latitude\":45.61696},{\"longitude\":-111.18576,\"latitude\":45.68689},{\"longitude\":-111.206,\"latitude\":45.72217}]}
+
+HTTP/1.1 200 OK
+server: nginx
+date: Mon, 04 Feb 2019 02:15:35 GMT
+content-type: application/json
+content-length: 1499
+connection: close
+access-control-allow-origin: *
+x-content-type-options: nosniff
+
+{"results": [{"latitude": 45.28834, "elevation": 2267, "longitude": -111.39386}, {"latitude": 45.28785, "elevation": 2246, "longitude": -111.37538}, {"latitude": 45.28271, "elevation": 2167, "longitude": -111.357}, {"latitude": 45.27676, "elevation": 2087, "longitude": -111.34082}, {"latitude": 45.26939, "elevation": 1997, "longitude": -111.32665}, {"latitude": 45.26144, "elevation": 1917, "longitude": -111.30593}, {"latitude": 45.26636, "elevation": 1841, "longitude": -111.26633}, {"latitude": 45.27235, "elevation": 1827, "longitude": -111.24183}, {"latitude": 45.28791, "elevation": 1809, "longitude": -111.22051}, {"latitude": 45.30623, "elevation": 1787, "longitude": -111.19664}, {"latitude": 45.34019, "elevation": 1793, "longitude": -111.1706}, {"latitude": 45.3654, "elevation": 1777, "longitude": -111.17472}, {"latitude": 45.37971, "elevation": 1725, "longitude": -111.17924}, {"latitude": 45.39037, "elevation": 1717, "longitude": -111.1999}, {"latitude": 45.40719, "elevation": 1688, "longitude": -111.22156}, {"latitude": 45.43619, "elevation": 1645, "longitude": -111.23311}, {"latitude": 45.46496, "elevation": 1614, "longitude": -111.25638}, {"latitude": 45.4924, "elevation": 1588, "longitude": -111.27248}, {"latitude": 45.5212, "elevation": 1567, "longitude": -111.2514}, {"latitude": 45.61696, "elevation": 1478, "longitude": -111.19695}, {"latitude": 45.68689, "elevation": 1428, "longitude": -111.18576}, {"latitude": 45.72217, "elevation": 1400, "longitude": -111.206}]}
