@@ -1,0 +1,14 @@
+GET /api/v1/lookup?locations=39.90974%2C-106.17188%7C62.52417%2C10.02487
+accept-encoding: gzip,deflate
+accept: */*
+
+HTTP/1.1 200 OK
+server: nginx
+date: Mon, 04 Feb 2019 02:15:30 GMT
+content-type: application/json
+content-length: 145
+connection: close
+access-control-allow-origin: *
+x-content-type-options: nosniff
+
+{"results": [{"latitude": 39.90974, "elevation": 2639, "longitude": -106.17188}, {"latitude": 62.52417, "elevation": 49, "longitude": 10.02487}]}
