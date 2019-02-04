@@ -1,7 +1,7 @@
 const should = require('should');
 const openElevation = require('../../lib/service/open-elevation');
 
-const OPEN_ELEVATION_HOST = process.env.OPEN_ELEVATION_HOST || 'https://open-elevation.com';
+const OPEN_ELEVATION_URL = process.env.OPEN_ELEVATION_URL || 'https://open-elevation.com';
 
 describe('open elevation', function () {
 
@@ -12,7 +12,7 @@ describe('open elevation', function () {
     ];
     const { query } = openElevation({
       name: 'open-elevation',
-      host: OPEN_ELEVATION_HOST,
+      url: OPEN_ELEVATION_URL,
       enable: true
     });
 
@@ -54,7 +54,7 @@ describe('open elevation', function () {
     ];
     const { query } = openElevation({
       name: 'open-elevation',
-      host: OPEN_ELEVATION_HOST,
+      url: OPEN_ELEVATION_URL,
       enable: true
     });
 
