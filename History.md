@@ -1,4 +1,14 @@
 
+0.2.0 / 2019-02-03
+==================
+
+ * add open-elevation service
+ * change returned value to array of pairs: ll and elevation
+ * return successfull provider and stats on attempted providers
+ * fix: return just the result
+ * fix: initialize query id
+ * use fetchagent in elevation-api-io service
+
 0.1.0 / 2019-02-01
 ==================
 
