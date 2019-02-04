@@ -1,4 +1,11 @@
 
+0.2.1 / 2019-02-04
+==================
+
+ * change open-elevation option host to url
+ * return original points as part of the result
+ * fix: check result when setting common fields
+
 0.2.0 / 2019-02-03
 ==================
 
