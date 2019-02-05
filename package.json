@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "fetchagent": "~2",
+    "geodesy": "~1",
     "run-waterfall-until": "~1"
   },
   "devDependencies": {
