@@ -1,0 +1,13 @@
+GET /api/v2/lookup?lls=-106.827126%2C40.483468%7C-106.1%2C40.5
+accept-encoding: gzip,deflate
+accept: */*
+
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+content-length: 101
+etag: W/"65-smQMylGbJTQw04OX1O2uOJIQ2yk"
+server-timing: 0; dur=3.63; desc="Request", 1; dur=3.13; desc="lookup"
+date: Thu, 07 Feb 2019 17:16:49 GMT
+connection: close
+
+{"results":[{"ll":[-106.827126,40.483468],"elevation":2082.5},{"ll":[-106.1,40.5],"elevation":3065}]}
