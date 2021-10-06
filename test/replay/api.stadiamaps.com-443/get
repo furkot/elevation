@@ -1,0 +1,20 @@
+GET /height?json=%7B%22shape%22%3A%5B%7B%22lat%22%3A40.483468%2C%22lon%22%3A-106.827126%7D%2C%7B%22lat%22%3A40.5%2C%22lon%22%3A-106.1%7D%2C%7B%22lat%22%3A40.8%2C%22lon%22%3A-106.9%7D%5D%7D&api_key=test
+accept-encoding: gzip,deflate
+accept: */*
+
+HTTP/1.1 200 OK
+server: nginx
+date: Sun, 10 Oct 2021 15:03:52 GMT
+content-type: application/json;charset=utf-8
+content-length: 145
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+stadia-entrypoint: fra-pop-roque-whsvs
+stadia-billable: 1
+stadia-property: 2335
+access-control-allow-origin: *
+access-control-allow-headers: Stadia-Auth
+access-control-allow-methods: GET,POST,OPTIONS
+x-robots-tag: noindex
+connection: close
+
+{"shape":[{"lat":40.483468,"lon":-106.827126},{"lat":40.500000,"lon":-106.100000},{"lat":40.800000,"lon":-106.900000}],"height":[2061,3039,2489]}

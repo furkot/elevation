@@ -1,0 +1,21 @@
+POST /height?api_key=test
+accept-encoding: gzip,deflate
+accept: */*
+body: {\"shape\":[{\"lat\":40.483468,\"lon\":-106.827126},{\"lat\":40.5,\"lon\":-106.1},{\"lat\":40.8,\"lon\":-106.9}]}
+
+HTTP/1.1 200 OK
+server: nginx
+date: Sun, 10 Oct 2021 15:09:53 GMT
+content-type: application/json;charset=utf-8
+content-length: 145
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+stadia-entrypoint: fra-pop-roque-sauvm
+stadia-billable: 1
+stadia-property: 2335
+access-control-allow-origin: *
+access-control-allow-headers: Stadia-Auth
+access-control-allow-methods: GET,POST,OPTIONS
+x-robots-tag: noindex
+connection: close
+
+{"shape":[{"lat":40.483468,"lon":-106.827126},{"lat":40.500000,"lon":-106.100000},{"lat":40.800000,"lon":-106.900000}],"height":[2061,3039,2489]}
