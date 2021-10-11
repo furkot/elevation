@@ -15,4 +15,18 @@ describe('furkot elevation', function () {
     });
   });
 
+  it('invoke callback on timeout', function (done) {
+    const points = [ [ 0, 0 ], [ 1, 1 ] ];
+    const elevation = furkotElevation({
+      timeout: 10,
+      random_parameters: {
+        timeout: 100000
+      },
+      random_enable: true
+    });
+    elevation(points, (result) => {
+      should.not.exist(result);
+      done();
+    });
+  });
 });
