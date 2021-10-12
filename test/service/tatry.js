@@ -36,7 +36,9 @@ describe('tatry', function () {
     const { query } = openElevation({
       name: 'tatry',
       url: TATRY_URL,
-      get_limit: 3,
+      parameters: {
+        get_limit: 2
+      },
       enable: true
     });
 

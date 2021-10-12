@@ -1,6 +1,7 @@
-GET /api/v2/lookup?lls=-106.827126%2C40.483468%7C-106.1%2C40.5%7C-106.9%2C40.8
+POST /api/v2/lookup
 accept-encoding: gzip,deflate
 accept: */*
+body: {\"lls\":[[-106.827126,40.483468],[-106.1,40.5],[-106.9,40.8]]}
 
 HTTP/1.1 200 OK
 content-type: application/json; charset=utf-8
