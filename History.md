@@ -1,4 +1,13 @@
 
+1.0.0 / 2021-10-12
+==================
+
+ * upgrade dev dependencies
+ * attempt to query the next service when first one takes too long
+ * invoke callback on timeout
+ * support Valhalla elevation profile service
+ * fix test of POST request to tatry service
+
 0.4.0 / 2019-02-07
 ==================
 
