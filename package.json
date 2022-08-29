@@ -24,7 +24,7 @@
     "isomorphic-fetch": "~3",
     "jshint": "~2",
     "localenv": "^0.2.2",
-    "mocha": "~9",
+    "mocha": "~10",
     "should": "~13"
   },
   "scripts": {
