@@ -24,11 +24,10 @@ const points = [
   // ...
 ];
 
-elevation(points, function(err, result) {
-  // result is an Array of elevations in meters
-  // elevation Array items corresponds to the items in points array 
-  assert.equal(result.length, points.length);
-});
+const result = await elevation(points);
+// result is an Array of elevations in meters
+// elevation Array items corresponds to the items in points array 
+assert.equal(result.length, points.length);
 ```
 
 ## License
