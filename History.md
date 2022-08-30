@@ -1,4 +1,13 @@
 
+1.0.2 / 2022-08-30
+==================
+
+ * fix tests for node 18
+ * remove localenv module
+ * upgrade mocha to ~10
+ * replace Travis CI with github actions
+ * rename to @furkot/elevation
+
 1.0.1 / 2021-10-15
 ==================
 
