@@ -16,8 +16,7 @@
   ],
   "dependencies": {
     "fetchagent": "~2",
-    "geodesy": "~1",
-    "run-waterfall-until": "~1"
+    "geodesy": "~1"
   },
   "devDependencies": {
     "@pirxpilot/replay": "^2.2.1",
