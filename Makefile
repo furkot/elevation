@@ -5,6 +5,7 @@ lint:
 
 test:
 	./node_modules/.bin/mocha --recursive \
+	  --node-option no-experimental-fetch \
 		--require should \
 		--require test/replay \
 		--require isomorphic-fetch
