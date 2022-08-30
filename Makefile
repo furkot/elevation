@@ -5,9 +5,9 @@ lint:
 
 test:
 	./node_modules/.bin/mocha --recursive \
+	  --node-option no-experimental-fetch \
 		--require should \
 		--require test/replay \
-		--require isomorphic-fetch \
-		--require localenv
+		--require isomorphic-fetch
 
 .PHONY: check lint test
