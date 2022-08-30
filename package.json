@@ -23,7 +23,6 @@
     "@pirxpilot/replay": "^2.2.1",
     "isomorphic-fetch": "~3",
     "jshint": "~2",
-    "localenv": "^0.2.2",
     "mocha": "~10",
     "should": "~13"
   },
