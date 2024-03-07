@@ -1,11 +1,12 @@
+const { describe, it } = require('node:test');
 const valhallaElevation = require('../../lib/service/valhalla');
 
 const VALHALLA_URL = process.env.VALHALLA_URL || 'https://api.stadiamaps.com';
 const VALHALLA_KEY = process.env.VALHALLA_KEY || 'test'; // key valid for replay only
 
-describe('valhalla elevation service', function () {
+describe('valhalla elevation service', async function () {
 
-  it('should fetch elevation for 4 points', async function () {
+  await it('should fetch elevation for 4 points', async function () {
     const points = [
       [-106.827126, 40.483468],
       [-106.1, 40.5],
@@ -26,7 +27,7 @@ describe('valhalla elevation service', function () {
     ]);
   });
 
-  it('should fetch elevation using post if over the get_limit', async function () {
+  await it('should fetch elevation using post if over the get_limit', async function () {
     const points = [
       [-106.827126, 40.483468],
       [-106.1, 40.5],

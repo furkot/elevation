@@ -1,11 +1,12 @@
+const { describe, it } = require('node:test');
 const should = require('should');
 const furkotElevation = require('../');
 
 /* global AbortController */
 
-describe('furkot elevation', function () {
+describe('furkot elevation', async function () {
 
-  it('uses random service by default', async function () {
+  await it('uses random service by default', async function () {
     const points = [[0, 0], [1, 1]];
     const elevation = furkotElevation({
       random_enable: true
@@ -15,7 +16,7 @@ describe('furkot elevation', function () {
     result.should.have.length(points.length);
   });
 
-  it('reject on timeout', async function () {
+  await it('reject on timeout', async function () {
     const points = [[0, 0], [1, 1]];
     const elevation = furkotElevation({
       order: ['random', 'random', 'random'],
@@ -28,7 +29,7 @@ describe('furkot elevation', function () {
     return elevation(points).should.be.rejectedWith(Error, { cause: Symbol.for('timeout') });
   });
 
-  it('reject on abort', function () {
+  await it('reject on abort', function () {
     const points = [[0, 0], [1, 1]];
     const elevation = furkotElevation({
       timeout: 25,
@@ -42,7 +43,7 @@ describe('furkot elevation', function () {
     return elevation(points, { signal: controller.signal }).should.be.rejectedWith(/aborted/);
   });
 
-  it('timeout first service', async function () {
+  await it('timeout first service', async function () {
     const points = [[0, 0], [1, 1]];
     const elevation = furkotElevation({
       timeout: 50,

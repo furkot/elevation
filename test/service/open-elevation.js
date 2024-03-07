@@ -1,10 +1,11 @@
+const { describe, it } = require('node:test');
 const openElevation = require('../../lib/service/open-elevation');
 
 const OPEN_ELEVATION_URL = process.env.OPEN_ELEVATION_URL || 'https://open-elevation.com';
 
-describe('open elevation', function () {
+describe('open elevation', async function () {
 
-  it('should fetch elevation for 2 points', async function () {
+  await it('should fetch elevation for 2 points', async function () {
     const points = [
       [-106.17188, 39.90974],
       [10.02487, 62.52417]
@@ -22,7 +23,7 @@ describe('open elevation', function () {
     ]);
   });
 
-  it('should split request if needed', async function () {
+  await it('should split request if needed', async function () {
     const points = [
       [-111.393860, 45.288340],
       [-111.375380, 45.287850],
