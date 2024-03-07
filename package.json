@@ -19,9 +19,9 @@
     "geodesy": "~1"
   },
   "devDependencies": {
+    "@pirxpilot/jshint": "~3",
     "@pirxpilot/replay": "^2.2.1",
     "isomorphic-fetch": "~3",
-    "jshint": "~2",
     "mocha": "~10",
     "should": "~13"
   },
