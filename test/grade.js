@@ -1,6 +1,7 @@
+const { describe, it } = require('node:test');
 const grade = require('../lib/grade');
 
-describe('grade elevation', function () {
+describe('grade elevation', async function () {
 
   function roundDistance(profile) {
     return Math.round(profile.reduce((d, p) => {
@@ -10,7 +11,7 @@ describe('grade elevation', function () {
     }, 0));
   }
 
-  it('grade first segment', function () {
+  await it('grade first segment', function () {
     const profile = [{
       ll: [-110.90401,40.68914],
       elevation: 3297
@@ -38,7 +39,7 @@ describe('grade elevation', function () {
     }]);
   });
 
-  it('grade incline', function () {
+  await it('grade incline', function () {
     const profile = [{
       ll: [-110.90406,40.6891],
       elevation: 3298
@@ -136,7 +137,7 @@ describe('grade elevation', function () {
     }]);
   });
 
-  it('grade decline', function () {
+  await it('grade decline', function () {
     const profile = [{
       ll:[-110.90632,40.69176],
       elevation: 3452
@@ -241,7 +242,7 @@ describe('grade elevation', function () {
     }]);
   });
 
-  it('grade saddle', function () {
+  await it('grade saddle', function () {
     const profile = [{
       ll:[-110.90632,40.69176],
       elevation: 3452
@@ -304,7 +305,7 @@ describe('grade elevation', function () {
     }]);
   });
 
-  it('grade bulge', function () {
+  await it('grade bulge', function () {
     const profile = [{
       ll:[-110.90632,40.69176],
       elevation: 3312
@@ -360,7 +361,7 @@ describe('grade elevation', function () {
     }]);
   });
 
-  it('limit', function () {
+  await it('limit', function () {
     const profile = [{
       ll: [-110.90406,40.6891],
       elevation: 3298

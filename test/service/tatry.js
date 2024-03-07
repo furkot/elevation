@@ -1,10 +1,11 @@
+const { describe, it } = require('node:test');
 const openElevation = require('../../lib/service/tatry');
 
 const TATRY_URL = process.env.TATRY_URL || 'http://elevation.tatry.com:3080';
 
-describe('tatry', function () {
+describe('tatry', async function () {
 
-  it('should fetch elevation for 3 points', async function () {
+  await it('should fetch elevation for 3 points', async function () {
     const points = [
       [-106.827126, 40.483468],
       [-106.1, 40.5]
@@ -22,7 +23,7 @@ describe('tatry', function () {
     ]);
   });
 
-  it('should fetch elevation using post if over the get_limit', async function () {
+  await it('should fetch elevation using post if over the get_limit', async function () {
     const points = [
       [-106.827126, 40.483468],
       [-106.1, 40.5],

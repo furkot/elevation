@@ -1,8 +1,9 @@
+const { describe, it } = require('node:test');
 const elevationApiIo = require('../../lib/service/elevation-api-io');
 
-describe('elevation API io', function () {
+describe('elevation API io', async function () {
 
-  it('should fetch elevation for 2 points', async function () {
+  await it('should fetch elevation for 2 points', async function () {
     const points = [
       [-106.17188, 39.90974],
       [10.02487, 62.52417]
@@ -22,7 +23,7 @@ describe('elevation API io', function () {
     }]);
   });
 
-  it('should split request if needed', async function () {
+  await it('should split request if needed', async function () {
     const points = [
       [-111.393860, 45.288340],
       [-111.375380, 45.287850],

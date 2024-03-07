@@ -7,7 +7,10 @@
     "email": "pirxpilot@furkot.com",
     "url": "https://pirxpilot.me"
   },
-  "repository": "furkot/elevation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/furkot/elevation.git"
+  },
   "license": "MIT",
   "keywords": [
     "furkot-elevation",
@@ -19,10 +22,9 @@
     "geodesy": "~1"
   },
   "devDependencies": {
+    "@pirxpilot/jshint": "~3",
     "@pirxpilot/replay": "^2.2.1",
     "isomorphic-fetch": "~3",
-    "jshint": "~2",
-    "mocha": "~10",
     "should": "~13"
   },
   "scripts": {
