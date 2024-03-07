@@ -1,4 +1,11 @@
 
+2.0.1 / 2024-03-07
+==================
+
+ * upgrade github actions
+ * replace mocha with node:test
+ * replace jshint with @pirxpilot/jshint
+
 2.0.0 / 2022-08-30
 ==================
 
