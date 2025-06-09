@@ -1,8 +1,8 @@
-const { describe, it } = require('node:test');
+const test = require('node:test');
 const elevationApiIo = require('../../lib/service/elevation-api-io');
 
-describe('elevation API io', async () => {
-  await it('should fetch elevation for 2 points', async () => {
+test('elevation API io', async t => {
+  await t.test('should fetch elevation for 2 points', async t => {
     const points = [
       [-106.17188, 39.90974],
       [10.02487, 62.52417]
@@ -13,7 +13,7 @@ describe('elevation API io', async () => {
     });
 
     const result = await query(points);
-    result.should.eql([
+    t.assert.deepEqual(result, [
       {
         ll: [-106.17188, 39.90974],
         elevation: 2607
@@ -25,7 +25,7 @@ describe('elevation API io', async () => {
     ]);
   });
 
-  await it('should split request if needed', async () => {
+  await t.test('should split request if needed', async t => {
     const points = [
       [-111.39386, 45.28834],
       [-111.37538, 45.28785],
@@ -56,7 +56,8 @@ describe('elevation API io', async () => {
     });
 
     const result = await query(points);
-    result.should.eql(
+    t.assert.deepEqual(
+      result,
       [
         2282, 2281.5, 2128, 2140, 2029, 1916.5, 1860.5, 1857, 1855.5, 1838, 1770.5, 1797.5, 1770, 1767, 1721.5, 1664.5,
         1643.5, 1590, 1670.5, 1478, 1425, 1396

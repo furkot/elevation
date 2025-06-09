@@ -1,11 +1,10 @@
-const { describe, it } = require('node:test');
-const should = require('should');
+const test = require('node:test');
 const furkotElevation = require('../lib/furkot-elevation');
 
 /* global AbortController */
 
-describe('furkot elevation', async () => {
-  await it('uses random service by default', async () => {
+test('furkot elevation', async t => {
+  await t.test('uses random service by default', async t => {
     const points = [
       [0, 0],
       [1, 1]
@@ -14,11 +13,11 @@ describe('furkot elevation', async () => {
       random_enable: true
     });
     const result = await elevation(points);
-    should.exist(result);
-    result.should.have.length(points.length);
+    t.assert.ok(result);
+    t.assert.equal(result.length, points.length);
   });
 
-  await it('reject on timeout', async () => {
+  await t.test('reject on timeout', async t => {
     const points = [
       [0, 0],
       [1, 1]
@@ -31,10 +30,10 @@ describe('furkot elevation', async () => {
       },
       random_enable: true
     });
-    return elevation(points).should.be.rejectedWith(Error, { cause: Symbol.for('timeout') });
+    await t.assert.rejects(elevation(points), { cause: Symbol.for('timeout') });
   });
 
-  await it('reject on abort', () => {
+  await t.test('reject on abort', async t => {
     const points = [
       [0, 0],
       [1, 1]
@@ -48,10 +47,10 @@ describe('furkot elevation', async () => {
     });
     const controller = new AbortController();
     setTimeout(() => controller.abort());
-    return elevation(points, { signal: controller.signal }).should.be.rejectedWith(/aborted/);
+    await t.assert.rejects(elevation(points, { signal: controller.signal }), /aborted/);
   });
 
-  await it('timeout first service', async () => {
+  await t.test('timeout first service', async t => {
     const points = [
       [0, 0],
       [1, 1]
@@ -68,8 +67,8 @@ describe('furkot elevation', async () => {
       success_random_enable: true
     });
     const result = await elevation(points);
-    should.exist(result);
-    result.should.have.length(points.length);
-    result.provider.should.equal('success_random');
+    t.assert.ok(result);
+    t.assert.equal(result.length, points.length);
+    t.assert.equal(result.provider, 'success_random');
   });
 });

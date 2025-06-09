@@ -1,7 +1,7 @@
-const { describe, it } = require('node:test');
+const test = require('node:test');
 const grade = require('../lib/grade');
 
-describe('grade elevation', async () => {
+test('grade elevation', async t => {
   function roundDistance(profile) {
     return Math.round(
       profile.reduce((d, p) => {
@@ -12,7 +12,7 @@ describe('grade elevation', async () => {
     );
   }
 
-  await it('grade first segment', () => {
+  await t.test('grade first segment', t => {
     const profile = [
       {
         ll: [-110.90401, 40.68914],
@@ -28,8 +28,8 @@ describe('grade elevation', async () => {
       }
     ];
     grade(profile, 250);
-    roundDistance(profile).should.be.equal(103);
-    profile.should.be.deepEqual([
+    t.assert.equal(roundDistance(profile), 103);
+    t.assert.deepEqual(profile, [
       {
         ll: [-110.90401, 40.68914],
         elevation: 3297,
@@ -48,7 +48,7 @@ describe('grade elevation', async () => {
     ]);
   });
 
-  await it('grade incline', () => {
+  await t.test('grade incline', t => {
     const profile = [
       {
         ll: [-110.90406, 40.6891],
@@ -104,8 +104,8 @@ describe('grade elevation', async () => {
       }
     ];
     grade(profile, 250);
-    roundDistance(profile).should.be.equal(525);
-    profile.should.be.deepEqual([
+    t.assert.equal(roundDistance(profile), 525);
+    t.assert.deepEqual(profile, [
       {
         ll: [-110.90406, 40.6891],
         elevation: 3298,
@@ -174,7 +174,7 @@ describe('grade elevation', async () => {
     ]);
   });
 
-  await it('grade decline', () => {
+  await t.test('grade decline', t => {
     const profile = [
       {
         ll: [-110.90632, 40.69176],
@@ -234,8 +234,8 @@ describe('grade elevation', async () => {
       }
     ];
     grade(profile, 250);
-    roundDistance(profile).should.be.equal(554);
-    profile.should.be.deepEqual([
+    t.assert.equal(roundDistance(profile), 554);
+    t.assert.deepEqual(profile, [
       {
         ll: [-110.90632, 40.69176],
         elevation: 3452,
@@ -309,7 +309,7 @@ describe('grade elevation', async () => {
     ]);
   });
 
-  await it('grade saddle', () => {
+  await t.test('grade saddle', t => {
     const profile = [
       {
         ll: [-110.90632, 40.69176],
@@ -345,8 +345,8 @@ describe('grade elevation', async () => {
       }
     ];
     grade(profile, 250);
-    roundDistance(profile).should.be.equal(218);
-    profile.should.be.deepEqual([
+    t.assert.equal(roundDistance(profile), 218);
+    t.assert.deepEqual(profile, [
       {
         ll: [-110.90632, 40.69176],
         elevation: 3452,
@@ -390,7 +390,7 @@ describe('grade elevation', async () => {
     ]);
   });
 
-  await it('grade bulge', () => {
+  await t.test('grade bulge', t => {
     const profile = [
       {
         ll: [-110.90632, 40.69176],
@@ -422,8 +422,8 @@ describe('grade elevation', async () => {
       }
     ];
     grade(profile, 250);
-    roundDistance(profile).should.be.equal(217);
-    profile.should.be.deepEqual([
+    t.assert.equal(roundDistance(profile), 217);
+    t.assert.deepEqual(profile, [
       {
         ll: [-110.90632, 40.69176],
         elevation: 3312,
@@ -462,7 +462,7 @@ describe('grade elevation', async () => {
     ]);
   });
 
-  await it('limit', () => {
+  await t.test('limit', t => {
     const profile = [
       {
         ll: [-110.90406, 40.6891],
@@ -518,8 +518,8 @@ describe('grade elevation', async () => {
       }
     ];
     grade(profile, 100);
-    roundDistance(profile).should.be.equal(525);
-    profile.should.be.deepEqual([
+    t.assert.equal(roundDistance(profile), 525);
+    t.assert.deepEqual(profile, [
       {
         ll: [-110.90406, 40.6891],
         elevation: 3298,

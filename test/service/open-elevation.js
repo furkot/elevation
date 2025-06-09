@@ -1,10 +1,10 @@
-const { describe, it } = require('node:test');
+const test = require('node:test');
 const openElevation = require('../../lib/service/open-elevation');
 
 const OPEN_ELEVATION_URL = process.env.OPEN_ELEVATION_URL || 'https://open-elevation.com';
 
-describe('open elevation', async () => {
-  await it('should fetch elevation for 2 points', async () => {
+test('open elevation', async t => {
+  await t.test('should fetch elevation for 2 points', async t => {
     const points = [
       [-106.17188, 39.90974],
       [10.02487, 62.52417]
@@ -16,13 +16,13 @@ describe('open elevation', async () => {
     });
 
     const result = await query(points);
-    result.should.eql([
+    t.assert.deepEqual(result, [
       { ll: [-106.17188, 39.90974], elevation: 2639 },
       { ll: [10.02487, 62.52417], elevation: 49 }
     ]);
   });
 
-  await it('should split request if needed', async () => {
+  await t.test('should split request if needed', async t => {
     const points = [
       [-111.39386, 45.28834],
       [-111.37538, 45.28785],
@@ -54,7 +54,7 @@ describe('open elevation', async () => {
     });
 
     const result = await query(points);
-    result.should.eql([
+    t.assert.deepEqual(result, [
       { ll: [-111.39386, 45.28834], elevation: 2267 },
       { ll: [-111.37538, 45.28785], elevation: 2246 },
       { ll: [-111.357, 45.28271], elevation: 2167 },

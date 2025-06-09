@@ -1,11 +1,11 @@
-const { describe, it } = require('node:test');
+const test = require('node:test');
 const valhallaElevation = require('../../lib/service/valhalla');
 
 const VALHALLA_URL = process.env.VALHALLA_URL || 'https://api.stadiamaps.com';
 const VALHALLA_KEY = process.env.VALHALLA_KEY || 'test'; // key valid for replay only
 
-describe('valhalla elevation service', async () => {
-  await it('should fetch elevation for 4 points', async () => {
+test('valhalla elevation service', async t => {
+  await t.test('should fetch elevation for 4 points', async t => {
     const points = [
       [-106.827126, 40.483468],
       [-106.1, 40.5],
@@ -19,14 +19,14 @@ describe('valhalla elevation service', async () => {
     });
 
     const result = await query(points);
-    result.should.eql([
+    t.assert.deepEqual(result, [
       { ll: [-106.827126, 40.483468], elevation: 2061 },
       { ll: [-106.1, 40.5], elevation: 3039 },
       { ll: [-106.9, 40.8], elevation: 2489 }
     ]);
   });
 
-  await it('should fetch elevation using post if over the get_limit', async () => {
+  await t.test('should fetch elevation using post if over the get_limit', async t => {
     const points = [
       [-106.827126, 40.483468],
       [-106.1, 40.5],
@@ -43,7 +43,7 @@ describe('valhalla elevation service', async () => {
     });
 
     const result = await query(points);
-    result.should.eql([
+    t.assert.deepEqual(result, [
       { ll: [-106.827126, 40.483468], elevation: 2061 },
       { ll: [-106.1, 40.5], elevation: 3039 },
       { ll: [-106.9, 40.8], elevation: 2489 }

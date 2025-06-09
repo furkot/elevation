@@ -8,7 +8,6 @@ format:
 
 TEST_OPTS := \
 	--no-experimental-fetch \
-	--require should \
 	--require ./test/replay/index.js \
 	--require isomorphic-fetch
 
