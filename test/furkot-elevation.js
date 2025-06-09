@@ -1,6 +1,6 @@
 const { describe, it } = require('node:test');
 const should = require('should');
-const furkotElevation = require('../');
+const furkotElevation = require('../lib/furkot-elevation');
 
 /* global AbortController */
 
