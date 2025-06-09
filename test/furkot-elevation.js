@@ -1,23 +1,27 @@
-const { describe, it } = require('node:test');
-const should = require('should');
-const furkotElevation = require('../');
+const test = require('node:test');
+const furkotElevation = require('../lib/furkot-elevation');
 
 /* global AbortController */
 
-describe('furkot elevation', async function () {
-
-  await it('uses random service by default', async function () {
-    const points = [[0, 0], [1, 1]];
+test('furkot elevation', async t => {
+  await t.test('uses random service by default', async t => {
+    const points = [
+      [0, 0],
+      [1, 1]
+    ];
     const elevation = furkotElevation({
       random_enable: true
     });
     const result = await elevation(points);
-    should.exist(result);
-    result.should.have.length(points.length);
+    t.assert.ok(result);
+    t.assert.equal(result.length, points.length);
   });
 
-  await it('reject on timeout', async function () {
-    const points = [[0, 0], [1, 1]];
+  await t.test('reject on timeout', async t => {
+    const points = [
+      [0, 0],
+      [1, 1]
+    ];
     const elevation = furkotElevation({
       order: ['random', 'random', 'random'],
       timeout: 10,
@@ -26,11 +30,14 @@ describe('furkot elevation', async function () {
       },
       random_enable: true
     });
-    return elevation(points).should.be.rejectedWith(Error, { cause: Symbol.for('timeout') });
+    await t.assert.rejects(elevation(points), { cause: Symbol.for('timeout') });
   });
 
-  await it('reject on abort', function () {
-    const points = [[0, 0], [1, 1]];
+  await t.test('reject on abort', async t => {
+    const points = [
+      [0, 0],
+      [1, 1]
+    ];
     const elevation = furkotElevation({
       timeout: 25,
       random_parameters: {
@@ -40,11 +47,14 @@ describe('furkot elevation', async function () {
     });
     const controller = new AbortController();
     setTimeout(() => controller.abort());
-    return elevation(points, { signal: controller.signal }).should.be.rejectedWith(/aborted/);
+    await t.assert.rejects(elevation(points, { signal: controller.signal }), /aborted/);
   });
 
-  await it('timeout first service', async function () {
-    const points = [[0, 0], [1, 1]];
+  await t.test('timeout first service', async t => {
+    const points = [
+      [0, 0],
+      [1, 1]
+    ];
     const elevation = furkotElevation({
       timeout: 50,
       order: ['timeout_random', 'success_random'],
@@ -57,8 +67,8 @@ describe('furkot elevation', async function () {
       success_random_enable: true
     });
     const result = await elevation(points);
-    should.exist(result);
-    result.should.have.length(points.length);
-    result.provider.should.equal('success_random');
+    t.assert.ok(result);
+    t.assert.equal(result.length, points.length);
+    t.assert.equal(result.provider, 'success_random');
   });
 });
