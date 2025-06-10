@@ -17,6 +17,7 @@
     "furkot",
     "elevation"
   ],
+  "type": "module",
   "exports": "./lib/furkot-elevation",
   "dependencies": {
     "fetchagent": "~2",

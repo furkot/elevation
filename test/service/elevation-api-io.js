@@ -1,5 +1,5 @@
-const test = require('node:test');
-const elevationApiIo = require('../../lib/service/elevation-api-io');
+import test from 'node:test';
+import elevationApiIo from '../../lib/service/elevation-api-io/index.js';
 
 test('elevation API io', async t => {
   await t.test('should fetch elevation for 2 points', async t => {

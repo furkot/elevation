@@ -1,5 +1,5 @@
-const test = require('node:test');
-const openElevation = require('../../lib/service/tatry');
+import test from 'node:test';
+import openElevation from '../../lib/service/tatry/index.js';
 
 const TATRY_URL = process.env.TATRY_URL || 'http://elevation.tatry.com:3080';
 
