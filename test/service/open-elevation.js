@@ -1,5 +1,5 @@
-const test = require('node:test');
-const openElevation = require('../../lib/service/open-elevation');
+import test from 'node:test';
+import openElevation from '../../lib/service/open-elevation/index.js';
 
 const OPEN_ELEVATION_URL = process.env.OPEN_ELEVATION_URL || 'https://open-elevation.com';
 

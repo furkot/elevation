@@ -1,5 +1,5 @@
-const test = require('node:test');
-const valhallaElevation = require('../../lib/service/valhalla');
+import test from 'node:test';
+import valhallaElevation from '../../lib/service/valhalla/index.js';
 
 const VALHALLA_URL = process.env.VALHALLA_URL || 'https://api.stadiamaps.com';
 const VALHALLA_KEY = process.env.VALHALLA_KEY || 'test'; // key valid for replay only

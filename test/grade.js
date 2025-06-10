@@ -1,5 +1,5 @@
-const test = require('node:test');
-const grade = require('../lib/grade');
+import test from 'node:test';
+import grade from '../lib/grade.js';
 
 test('grade elevation', async t => {
   function roundDistance(profile) {

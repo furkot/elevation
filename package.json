@@ -17,7 +17,8 @@
     "furkot",
     "elevation"
   ],
-  "exports": "./lib/furkot-elevation",
+  "type": "module",
+  "exports": "./lib/furkot-elevation.js",
   "dependencies": {
     "fetchagent": "~2",
     "geodesy": "~1"

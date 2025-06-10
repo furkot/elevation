@@ -1,7 +1,7 @@
-const Replay = require('@pirxpilot/replay');
-const legacyFetch = require('node-fetch');
+import Replay from '@pirxpilot/replay';
+import legacyFetch from 'node-fetch';
 
-Replay.fixtures = __dirname;
+Replay.fixtures = import.meta.dirname;
 
 // default replay mode is 'replay'
 // change it by setting REPLAY environment variable:
