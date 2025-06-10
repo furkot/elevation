@@ -20,8 +20,8 @@
   "type": "module",
   "exports": "./lib/furkot-elevation",
   "dependencies": {
-    "fetchagent": "~2",
-    "geodesy": "~1"
+    "fetchagent": "~3",
+    "geodesy": "~2"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
