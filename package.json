@@ -25,7 +25,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@pirxpilot/replay": "^2.2.1",
-    "isomorphic-fetch": "~3"
+    "node-fetch": "~2"
   },
   "scripts": {
     "test": "make check"
