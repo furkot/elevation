@@ -7,9 +7,7 @@ format:
 	./node_modules/.bin/biome check --fix
 
 TEST_OPTS := \
-	--no-experimental-fetch \
-	--require ./test/replay/index.js \
-	--require isomorphic-fetch
+	--require ./test/replay/index.js
 
 test:
 	node --test $(TEST_OPTS)
