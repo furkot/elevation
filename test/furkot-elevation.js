@@ -1,5 +1,5 @@
-const test = require('node:test');
-const furkotElevation = require('../lib/furkot-elevation');
+import test from 'node:test';
+import furkotElevation from '../lib/furkot-elevation.js';
 
 /* global AbortController */
 
