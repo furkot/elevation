@@ -1,4 +1,10 @@
 
+3.0.0 / 2026-01-29
+==================
+
+ * transition to ESM format
+ * use node-fetch to allow using `replay` in the tests
+
 2.0.2 / 2025-06-09
 ==================
 
